@@ -15,7 +15,7 @@ const HOST = '0.0.0.0';
 // Middleware
 app.use(bodyParser.json());
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'http://anotherdomain.com'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'http://192.168.1.7'];
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
