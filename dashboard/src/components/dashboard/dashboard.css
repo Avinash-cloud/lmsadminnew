@@ -1,0 +1,259 @@
+:root {
+    --primary-clr: #992959;
+    --yellow-clr: #FFFF00;
+    --white-clr: #ffffff;
+    --black-clr: #000000;
+    --gray-clr: #F7F8F9;
+    --btn-green: #046963;
+    --btn-red: rgb(235, 39, 39);
+}
+
+
+body {
+    background-color: var(--primary-clr) !important;
+}
+/* .dashboard{
+    border: 1px solid red;
+} */
+.dashboard_wrapper {
+    /* border: 1px solid white; */
+    display: flex;
+    padding: 20px 0;
+
+    position: relative;
+}
+
+/* SECTION VERTICAL TABS */
+#experienceTab.nav-pills .nav-link {
+    color: var(--white-clr);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#experienceTab.nav-pills .nav-link.active {
+    color: var(--yellow-clr) !important;
+    background-color: transparent;
+    border-radius: 0px;
+    border-right: 3px solid var(--yellow-clr);
+}
+#experienceTab.nav-pills .nav-link {
+    border-radius: 0px;
+    border-right: 2px solid var(--white-clr);
+    font-size: 20px;
+}
+.date-range {
+    letter-spacing: 0.01em;
+    color: var(--white-clr);
+}
+
+/* STUB  LINKS */
+a {
+    color: var(--white-clr);
+    transition: 0.3s eas-in-out;
+}
+a:hover {
+    color: var(--yellow-clr);
+}
+
+.sidebar {
+    /* border: 1px solid green; */
+    position: fixed;
+    z-index: 2000 !important;
+}
+
+.tab-content {
+    position: absolute;
+    left: 20%;
+    width: 100%;
+    padding-right: 50px;
+}
+
+
+/* Add this CSS at the end of your dashboard.css file */
+
+
+.dashboard_wrapper {
+  display: flex;
+}
+
+.dashboard-container {
+  width: 100%;
+}
+
+.sidebar-toggler {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 1100;
+}
+
+.sidebar-toggler div {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+@media (max-width: 375px) {
+    .tab-content {
+        /* overflow-y: scroll; */
+        position: absolute;
+        left: 20%;
+        width: 100%;
+        padding: 30px 10px;
+    }
+    /* SECTION VERTICAL TABS */
+    #experienceTab.nav-pills .nav-link {
+        color: var(--black-clr);
+    }
+    #experienceTab.nav-pills .nav-link.active {
+        color: var(--primary-clr) !important;
+        background-color: transparent;
+        border-radius: 0px;
+        border-right: 3px solid var(--primary-clr);
+    }
+    #experienceTab.nav-pills .nav-link {
+        border-radius: 0px;
+        border-right: 2px solid var(--white-clr);
+        font-size: 20px;
+    }
+    .date-range {
+        letter-spacing: 0.01em;
+        color: var(--white-clr);
+    }
+  .sidebar {
+    left: -400px; /* Hide sidebar by default on smaller screens */
+    top: 60px;
+    background-color: var(--white-clr);
+    color: var(--black-clr);
+    padding:20px 0;
+  }
+
+  .sidebar.open {
+    left: 0; /* Slide in sidebar when open on smaller screens */
+  }
+
+  .tab-content {
+    left: 0; /* Adjust tab content to left on smaller screens */
+  }
+
+  .sidebar-toggler {
+    display: flex; /* Display the toggler button on smaller screens */
+    left: 10px;
+    top: 20px;
+  }
+}
+
+@media (min-width:376px) and (max-width: 480px) {
+    .tab-content {
+        /* overflow-y: scroll; */
+        position: absolute;
+        left: 20%;
+        width: 100%;
+        padding: 30px 10px;
+    }
+    /* SECTION VERTICAL TABS */
+    #experienceTab.nav-pills .nav-link {
+        color: var(--black-clr);
+    }
+    #experienceTab.nav-pills .nav-link.active {
+        color: var(--primary-clr) !important;
+        background-color: transparent;
+        border-radius: 0px;
+        border-right: 3px solid var(--primary-clr);
+    }
+    #experienceTab.nav-pills .nav-link {
+        border-radius: 0px;
+        border-right: 2px solid var(--white-clr);
+        font-size: 20px;
+    }
+    .date-range {
+        letter-spacing: 0.01em;
+        color: var(--white-clr);
+    }
+  .sidebar {
+    left: -480px; /* Hide sidebar by default on smaller screens */
+    top: 60px;
+    background-color: var(--white-clr);
+    color: var(--black-clr);
+    padding:20px 0;
+  }
+
+  .sidebar.open {
+    left: 0; /* Slide in sidebar when open on smaller screens */
+  }
+
+  .tab-content {
+    left: 0; /* Adjust tab content to left on smaller screens */
+  }
+
+  .sidebar-toggler {
+    display: flex; /* Display the toggler button on smaller screens */
+    left: 10px;
+    top: 20px;
+  }
+}
+
+@media (min-width:481px) and (max-width: 768px) {
+    .tab-content {
+        /* overflow-y: scroll; */
+        position: absolute;
+        left: 20%;
+        width: 100%;
+        padding: 30px 10px;
+    }
+    /* SECTION VERTICAL TABS */
+    #experienceTab.nav-pills .nav-link {
+        color: var(--black-clr);
+    }
+    #experienceTab.nav-pills .nav-link.active {
+        color: var(--primary-clr) !important;
+        background-color: transparent;
+        border-radius: 0px;
+        border-right: 3px solid var(--primary-clr);
+    }
+    #experienceTab.nav-pills .nav-link {
+        border-radius: 0px;
+        border-right: 2px solid var(--white-clr);
+        font-size: 20px;
+    }
+    .date-range {
+        letter-spacing: 0.01em;
+        color: var(--white-clr);
+    }
+  .sidebar {
+    left: -780px; /* Hide sidebar by default on smaller screens */
+    top: 60px;
+    background-color: var(--white-clr);
+    color: var(--black-clr);
+    padding:20px 0;
+  }
+
+  .sidebar.open {
+    left: 0; /* Slide in sidebar when open on smaller screens */
+  }
+
+  .tab-content {
+    left: 0; /* Adjust tab content to left on smaller screens */
+  }
+
+  .sidebar-toggler {
+    display: flex; /* Display the toggler button on smaller screens */
+    left: 10px;
+    top: 20px;
+  }
+}
+
+
+@media (min-width:769px) and (max-width: 1024px) {
+        #experienceTab.nav-pills .nav-link {
+        color: var(--white-clr);
+        font-size: 14px;
+    }
+}

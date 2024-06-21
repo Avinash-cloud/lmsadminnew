@@ -1,0 +1,211 @@
+:root {
+    --primary-clr: #992959;
+    --yellow-clr: #FFFF00;
+    --white-clr: #ffffff;
+    --black-clr: #000000;
+    --gray-clr: #F7F8F9;
+    --btn-green: #046963;
+    --btn-red: rgb(235, 39, 39);
+}
+
+
+
+.courses {
+    padding: 20px 0;
+}
+.courses_page_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.courses_page_header .courses_page_button input {
+    background-color: var(--white-clr);
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: var(--primary-clr);
+    font-weight: 600;
+    border: 2px solid var(--white-clr);
+    transition: all 0.5s;
+}
+.courses_page_header .courses_page_button input:hover {
+    background-color: transparent;
+    color: var(--white-clr);
+}
+table {
+    border: 1px solid black;
+    background-color: var(--white-clr);
+    width: 100%;
+    border-radius: 10px;    
+    --bs-table-color: #d1171700;
+}
+
+table th {
+    /* border: 1px solid black; */
+    color: var(--black-clr);
+    padding: 20px 20px 20px 10px;
+    width: 100%;
+    background-color: var(--gray-clr);
+    margin: 20px !important;
+}
+table .table_wrapper {
+    padding: 20px;
+}
+
+table tr td {
+    /* border: 1px solid black; */
+    color: var(--black-clr);
+    /* border: 1px solid red; */
+    padding: 20px 10px;
+    vertical-align: top;
+}
+table tr:hover {
+    background-color: var(--gray-clr);
+}
+
+
+.heading_row th:first-child {
+    /* border: 1px solid red; */
+    width: 5%;
+}
+.heading_row th:nth-child(2) {
+    /* border: 1px solid red; */
+    width: 20%;
+}
+
+.heading_row th:nth-child(3) {
+    /* border: 1px solid red; */
+    width: 20%;
+}
+
+.heading_row th:nth-child(4) {
+    /* border: 1px solid red; */
+    width: 10%;
+}
+
+.heading_row th:nth-child(5) {
+    /* border: 1px solid red; */
+    width: 30%;
+}
+
+.heading_row th:nth-child(6) {
+    /* border: 1px solid red; */
+    width: 6%;
+}
+.heading_row th:last-child {
+    /* border: 1px solid red; */
+    width: 5%;
+}
+
+table tr td img {
+    width: 80%;
+    border-radius: 10px;
+    margin: 0 20px;
+
+}
+
+.edit_btn input {
+    background-color: var(--btn-green);
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+    transition: all .4s;
+}
+.edit_btn input:hover {
+    background-color: #044d48;
+}
+.delete_btn input {
+    background-color: var(--btn-red);
+    border: none;
+    outline: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    color: white;
+    transition: all .4s;
+}
+.delete_btn input:hover {
+    background-color: rgb(199, 15, 15);
+}
+
+/* ---------- modal style --------- */
+.ReactModal__Overlay {
+    background-color: rgb(33 30 32 / 75%) !important;
+    z-index: 2001 !important;
+}
+.modal_wrapper {
+    /* border: 1px solid red !important; */
+    position: relative;
+}
+
+.modal_wrapper .close_btn {
+    /* border: 1px solid red; */
+    position: absolute;
+    top: -10px;
+    right: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 30px;
+}
+.modal_wrapper h2 {
+    color: var(--black-clr) !important;
+}
+.modal_wrapper label {
+    width: 100%;
+    display: block;
+    color: var(--black-clr);
+    margin-bottom: 10px;
+}
+.modal_wrapper input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: var(--gray-clr);
+    padding: 12px 20px;
+}
+.modal_wrapper .create_course_btn {
+    background-color: var(--btn-green);
+    border-radius: 4px;
+    color: white;
+    margin-top: 20px;
+    transition: all .4s;
+}
+.modal_wrapper .create_course_btn:hover {
+    background-color: #044d48;
+}
+
+@media (max-width: 375px) {
+    .table {
+        overflow-x: auto;
+    }
+    table tr td {
+        padding: 20px 10px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    
+    table tr td img {
+        width: 100%;
+        border-radius: 4px;
+        margin: 0px;
+    }
+}
+@media (min-width: 376px) and (max-width: 480px) {
+    .table {
+        overflow-x: auto;
+    }
+    table tr td {
+        padding: 20px 10px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    
+    table tr td img {
+        width: 100%;
+        border-radius: 4px;
+        margin: 0px;
+    }
+}
