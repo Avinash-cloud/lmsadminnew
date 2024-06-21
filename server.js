@@ -44,49 +44,7 @@ mongoose.connect('mongodb+srv://webdevrdg:Avinash9958@cluster0.eo904hp.mongodb.n
 });
 
 // .............................. course ......................................//
-// const courseSchema = new mongoose.Schema({
-//     title:{
-//       type:String,
-//     //   required:true,
-//     },
-//     img:{
-//       type:String,
-//     //   required:true,
-//     },
-//     videoNumber:{
-//       type:String,
-//     //   required:true,
-//     },
-//     modulenumber:{
-//       type:String,
-//     //   required:true,
-//     },
-//     discription:{
-//       type:String,
-//     //   required:true,
-//     },
-//     tag:{
-//       type:String,
-//     //   required:true,
-//     },
-//     price:{
-//         type:String,
-//         // required:true,
-//       },
-//   },{timestamps:true});
-    
 
-// const Coursedb = mongoose.models.courses || mongoose.model("courses", courseSchema)
-
-// // Routes
-// app.post('/api/courses', async (req, res) => {
-
-//   const { title,image, price, discription,tag, moduleCount} = req.body;
-
-//   const newCoursedb = new Coursedb({ title,image, price, discription,tag, moduleCount  });  
-//   await newCoursedb.save(); 
-//   res.json(newCoursedb); 
-// });
 
 
 const CourseSchema = new mongoose.Schema({
