@@ -28,6 +28,8 @@ app.use((req, res, next) => {
     console.log(`Request from IP: ${ip}`);
     next();
 });
+
+
 // app.use(session({
 //   secret: 'your-secret-key',
 //   resave: false,
