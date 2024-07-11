@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './editcourse.css'
+// import './editcourse.css'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
-const EditModule = () => {
+const EditWebinar = () => {
 
     // const [user, setUser] = useState({
         
@@ -18,7 +18,7 @@ const EditModule = () => {
 
         const fetchContacts = async () => {
           try {
-            const result = axios.get(`http://localhost:5000/api/module?id=${id}`);
+            const result = axios.get(`http://localhost:5000/api/webinar?id=${id}`);
             setUser((await result).data);
             console.log((await result).data);
           } catch (error) {
@@ -40,24 +40,23 @@ const EditModule = () => {
         }));
     };
 
-    
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.put(`http://localhost:5000/api/module/${id}`, user);
-      console.log('Updated Course:', response.data);
-      alert('Course updated successfully');
-    } catch (error) {
-      console.error('Error updating Course:', error);
-      alert('Failed to update Course');
-    }
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.put(`http://localhost:5000/api/webinar/${id}`, user);
+            console.log('Updated Course:', response.data);
+            alert('webinar updated successfully');
+        } catch (error) {
+            console.error('Error updating webinar:', error);
+            alert('Failed to update course');
+        }
+    };
 
   return (
     <div>
-      <div className="edit ">
+      <div className="edit">
         <div className="edit_wrapper">
-            <h1 className=' h1 text-white'>Edit Course</h1>
+            <h1>Edit Course</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Title </label>
@@ -69,29 +68,29 @@ const EditModule = () => {
                     />
                 </div>
                 <div>
-                    <label>Course</label>
+                    <label>Price: ₹ </label>
                     <input
                         type="text"
-                        name="course"
-                        value= {user.course}
+                        name="price"
+                        value= {user.price}
                         onChange={handleChange}
                     />
                 </div>
                 <div>
-                    <label>Tag </label>
+                    <label>Date </label>
                     <input
-                        type="text"
-                        name="tag"
-                        value={user.tag}
+                        type="date"
+                        name="date"
+                        value={user.date}
                         onChange={handleChange}
                     />
                 </div>
                 <div>
-                    <label>Discription </label>
+                    <label>Time </label>
                     <input
                         type="text"
-                        name="discription"
-                        value={user.discription}
+                        name="time"
+                        value={user.time}
                         onChange={handleChange}
                     />
                 </div>
@@ -103,4 +102,4 @@ const EditModule = () => {
   )
 }
 
-export default EditModule
+export default EditWebinar

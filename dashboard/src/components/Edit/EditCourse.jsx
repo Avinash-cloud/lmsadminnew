@@ -50,7 +50,7 @@ const EditCourse = () => {
         <div>
             <div className="edit">
                 <div className="edit_wrapper">
-                    <h1>Edit Course</h1>
+                    <h1 className='h1 text-white'>Edit Category</h1>
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label>Title </label>

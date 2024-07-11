@@ -73,10 +73,10 @@ const Courses = () => {
     setIsOpen(false);
   };
 
-  
+
   const handleFileChangeimg = (e) => {
     setFile(e.target.files[0]);
-};
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -108,7 +108,7 @@ const Courses = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('image',file );
+    formData.append('image', file);
     formData.append('title', title);
     formData.append('price', price);
     formData.append('discription', discription);
@@ -121,17 +121,18 @@ const Courses = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
-      setImage([...image, response.data]);
-      console.log(response.data);
+      // setImage([...image, response.data]);
+      alert('Category uploaded successfully');
+      window.location.reload();
     } catch (error) {
       console.error('Error uploading the course data', error);
     }
 
 
-   
+
 
     setTitle('');
-   
+
     setPrice('');
     setModuleCount('');
     setDiscription('');
@@ -148,39 +149,41 @@ const Courses = () => {
 
       if (response.status === 200) {
         // Course deleted successfully
-        alert('Course deleted:');
+        alert('Category deleted:');
         // Optionally update your state or re-fetch courses
-         // Example function to fetch courses again
-         window.location.reload();
+        // Example function to fetch courses again
+        window.location.reload();
       } else {
-        alert('Failed to delete course:');
+        alert('Failed to delete Category:');
         window.location.reload();
 
       }
     } catch (error) {
-      console.error('Error deleting course:', error);
+      console.error('Error deleting Category:', error);
     }
   };
 
   return (
-    <div>
+    <div className="p-2">
       <div className="courses">
         <div className="courses_page_header">
           <div className="courses_page_head">
-            <h2>Available Courses</h2>
-            <p>Whole data about your business here</p>
+            <h2 className="h2 text-white">Available Category </h2>
+
           </div>
           <div className="courses_page_button">
-            <input type="button" value="Add Courses" onClick={openModal} />
+            <input type="button" value="Add Category" onClick={openModal} />
           </div>
         </div>
-        {/* <Modal
+
+
+        <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
-        >  
+        >
           <div className="modal_wrapper">
             <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
               Fill the details!
@@ -195,7 +198,7 @@ const Courses = () => {
                   type="file"
                   id="myFile"
                   name="image"
-                  onChange={handleFileChange}
+                  onChange={handleFileChangeimg}
                 />
               </label>
               <label>
@@ -227,6 +230,24 @@ const Courses = () => {
                   onChange={(e) => setDiscription(e.target.value)}
                 />
               </label>
+              <label>
+                Tag
+                <input
+                  type="text"
+                  placeholder="Enter tag"
+                  value={tag}
+                  onChange={(e) => setTag(e.target.value)}
+                />
+              </label>
+              <label>
+                Course Count
+                <input
+                  type="text"
+                  placeholder="Enter module count"
+                  value={moduleCount}
+                  onChange={(e) => setModuleCount(e.target.value)}
+                />
+              </label>
               <input
                 className="create_course_btn"
                 type="submit"
@@ -234,90 +255,10 @@ const Courses = () => {
               />
             </form>
           </div>
-        </Modal> */}
-
-<Modal
-      isOpen={modalIsOpen}
-      onAfterOpen={afterOpenModal}
-      onRequestClose={closeModal}
-      style={customStyles}
-      contentLabel="Example Modal"
-    >
-      <div className="modal_wrapper">
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
-          Fill the details!
-        </h2>
-        <button className="close_btn" onClick={closeModal}>
-          <IoIosCloseCircleOutline />
-        </button>
-        <form className="modal_form" onSubmit={handleSubmit}>
-          <label>
-            Upload Image
-            <input
-              type="file"
-              id="myFile"
-              name="image"
-              onChange={handleFileChangeimg}
-            />
-          </label>
-          <label>
-            Title
-            <input
-              type="text"
-              placeholder="Enter name"
-              name="name"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </label>
-          <label>
-            Price
-            <input
-              type="text"
-              placeholder="Enter price"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-            />
-          </label>
-          <label>
-            Discription
-            <input
-              type="text"
-              placeholder="Enter detail"
-              name="detail"
-              value={discription}
-              onChange={(e) => setDiscription(e.target.value)}
-            />
-          </label>
-          <label>
-            Tag
-            <input
-              type="text"
-              placeholder="Enter tag"
-              value={tag}
-              onChange={(e) => setTag(e.target.value)}
-            />
-          </label>
-          <label>
-            Module Count
-            <input
-              type="text"
-              placeholder="Enter module count"
-              value={moduleCount}
-              onChange={(e) => setModuleCount(e.target.value)}
-            />
-          </label>
-          <input
-            className="create_course_btn"
-            type="submit"
-            value="Create Course"
-          />
-        </form>
-      </div>
-    </Modal>
+        </Modal>
 
         <div className="table">
-          <table>
+          <table className="mt-4">
             <div className="table_wrapper">
               <tr className="heading_row">
                 <th>#ID</th>

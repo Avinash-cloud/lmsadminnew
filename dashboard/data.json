@@ -1,0 +1,88 @@
+{
+    "_id": "664c402618886180f9520802",
+    "title": "tesgting the module data",
+    "language": "English",
+    "certificate": true,
+    "image": "https://www.legalbites.in/h-upload/2024/03/31/1314732-company-law.webp",
+    "video": "https://www.youtube.com/watch?v=H1tYE9anKyw",
+    "price": 137,
+    "discription1": "Definitions of law often raise the question of the extent to which law incorporates morality.[42] John Austin's utilitarian answer was that law is \"commands, backed by threat of sanctions, from a sovereign, to whom people have a habit of obedience\".[36] Natural lawyers, on the other hand, such as Jean-Jacques Rousseau, argue that law reflects essentially moral and unchangeable laws of nature. The concept of \"natural law\" emerged in ancient Greek philosophy concurrently and in connection with the notion of justice, and re-entered the mainstream of Western culture through the writings of Thomas Aquinas, notably his Treatise on Law.",
+    "points1": [
+      "testing 1",
+      "testing 2"
+    ],
+    "points2": [
+      "testing 3",
+      "testing 4"
+    ],
+    "discription2": "Definitions of law often raise the question of the extent to which law incorporates morality.[42] John Austin's utilitarian answer was that law is \"commands, backed by threat of sanctions, from a sovereign, to whom people have a habit of obedience\".[36] Natural lawyers, on the other hand, such as Jean-Jacques Rousseau, argue that law reflects essentially moral and unchangeable laws of nature. The concept of \"natural law\" emerged in ancient Greek philosophy concurrently and in connection with the notion of justice, and re-entered the mainstream of Western culture through the writings of Thomas Aquinas, notably his Treatise on Law.\n\nHugo Grotius, the founder of a purely rationalistic system of natural law, argued that law arises from both a social impulse—as Aristotle had indicated—and reason.[43] Immanuel Kant believed a moral imperative requires laws \"be chosen as though they should hold as universal laws of nature\".[44] Jeremy Bentham and his student Austin, following David Hume, believed that this conflated the \"is\" and what \"ought to be\" problem. Bentham and Austin argued for law's positivism; that real law is entirely separate from \"morality\".[45] Kant was also criticised by Friedrich Nietzsche, who rejected the principle of equality, and believed that law emanates from the will to power, and cannot be labeled as \"moral\" or \"immoral\".[46][47][48]\n\nIn 1934, the Austrian philosopher Hans Kelsen continued the positivist tradition in his book the Pure Theory of Law.[49] Kelsen believed that although law is separate from morality, it is endowed with \"normativity\", meaning we ought to obey it. While laws are positive \"is\" statements (e.g. the fine for reversing on a highway is €500); law tells us what we \"should\" do. Thus, each legal system can be hypothesised to have a 'basic norm' (German: Grundnorm) instructing us to obey. Kelsen's major opponent, Carl Schmitt, rejected both positivism and the idea of the rule of law because he did not accept the primacy of abstract normative principles over concrete political positions and decisions.[50] Therefore, Schmitt advocated a jurisprudence of the exception (state of emergency), which denied that legal norms could encompass all of the political experience.[51]\n\nLater in the 20th century, H. L. A. Hart attacked Austin for his simplifications and Kelsen for his fictions in The Concept of Law.[52] Hart argued law is a system of rules, divided into primary (rules of conduct) and secondary ones (rules addressed to officials to administer primary rules). Secondary rules are further divided into rules of adjudication (to resolve legal disputes), rules of change (allowing laws to be varied) and the rule of recognition (allowing laws to be identified as valid). Two of Hart's students continued the debate: In his book Law's Empire, Ronald Dworkin attacked Hart and the positivists for their refusal to treat law as a moral issue. Dworkin argues that law is an \"interpretive concept\"[37] that requires judges to find the best fitting and most just solution to a legal dispute, given their Anglo-American constitutional traditions. Joseph Raz, on the other hand, defended the positivist outlook and criticised Hart's \"soft social thesis\" approach in The Authority of Law.[38] Raz argues that law is authority, identifiable purely through social sources and without reference to moral reasoning. In his view, any categorisation of rules beyond their role as authoritative instruments in mediation are best left to sociology, rather than jurisprudence.[53]",
+    "requirements": [
+      "testing 3",
+      "testing 33"
+    ],
+    "rating": 4.2,
+    "module": "test module",
+    "description3": [
+      "Description",
+      "Description"
+    ],
+    "teacher": "Avinash purohit",
+    "course": "Law",
+    "lecture": 11,
+    "quizzes": 12,
+    "skillLevel": "basic",
+    "priceDis": "100",
+    "topic": [
+      {
+        "_id": "668b961f6e430b846bf6eb4c",
+        "lession": [
+          "ACFrOgAfGQokBoWk3kkut-diPY7KlT2_Ix1RuZTQCl8dIxRWYQBxXrhTD_N9JgNPjN7SkyaIHaRpbIGknx5pzhbswtmprriBPR4hB0G5qhECtsuH31woWfWhX2H18V36xLsAa19feBo1YlJzPcSL",
+          "Frequently Asked Questions (FAQs) - Google Docs"
+        ],
+        "name": "All Information"
+      },
+      {
+        "_id": "668b961f6e430b846bf6eb4d",
+        "lession": [
+          "Consultancy Agreement.pdf",
+          "Consultancy Agreement.pdf",
+          "Non Disclosure Agreement.pdf(1)",
+          "video2169478310"
+        ],
+        "name": "Assignments 04"
+      },
+      {
+        "_id": "668b961f6e430b846bf6eb4e",
+        "name": "Civil Drafting Sessions 03",
+        "lession": [
+          "Legal Drafts copy - Akshay",
+          "Legal Notice nad reply to breach of Contract ",
+          "video1685115094",
+          "video1720615423"
+        ]
+      },
+      {
+        "_id": "668b961f6e430b846bf6eb4f",
+        "name": "Contract Drafting Session 02",
+        "lession": [
+          "CONTRACT DRAFTING.pdf",
+          "Introduction Session"
+        ]
+      },
+      {
+        "_id": "668b961f6e430b846bf6eb50",
+        "lession": [
+          "Introduction of Course",
+          "video1169478310"
+        ],
+        "name": "Introduction Of Course 01"
+      },
+      {
+        "_id": "668b961f6e430b846bf6eb51",
+        "lession": [
+          "MCQ ON BASIC OF LEGAL DRAFTING.pdf"
+        ],
+        "name": "MCQ 05"
+      }
+    ]
+  }

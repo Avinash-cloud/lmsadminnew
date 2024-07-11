@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './teachers.css'
+import './teachers.css';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import CourseIMG from '../../assets/courses.jpg';
-
-
 
 const customStyles = {
   content: {
@@ -19,37 +17,33 @@ const customStyles = {
   },
 };
 
-
 const Modules = () => {
   const navigate = useNavigate();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [courses, setCourses] = useState([]);
+  const [imageFile, setImageFile] = useState(null);
 
-  const [title, setTitle] = useState('');
-  const [price, setPrice] = useState('');
-  const [discription, setDiscription] = useState('');
-  const [tag, setTag] = useState('');
-  const [moduleCount, setModuleCount] = useState('');
-  const [image, setImage] = useState('');
+  const [user, setUser] = useState({
+    name: '',
+    Experience: '',
+    description: '',
+    Position: '',
+  });
 
   useEffect(() => {
     const fetchContacts = async () => {
       try {
         const result = await axios.get('http://localhost:5000/api/teacher');
         setCourses(result.data);
-        console.log(result.data);
       } catch (error) {
-        console.log("the erro is ", error);
+        console.log("Error: ", error);
         if (error.response && error.response.status === 401) {
           navigate('/');
         }
       }
     };
     fetchContacts();
-
-  }, []);
-
-  const [newCourse, setNewCourse] = useState({ name: '', price: '', discription: '',tag: '', moduleCount: '', image: null });
+  }, [navigate]);
 
   const handleEdit = (_id) => {
     navigate(`/editteacher/${_id}`);
@@ -71,37 +65,59 @@ const Modules = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewCourse({ ...newCourse, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
   const handleFileChange = (e) => {
-    setNewCourse({ ...newCourse, image: URL.createObjectURL(e.target.files[0]) });
+    setImageFile(e.target.files[0]);
   };
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newContact = { title, price, discription, tag, moduleCount};
-    await axios.post('http://localhost:5000/api/module', newContact);
-    setTitle('');
-    setImage('');
-    setPrice('');
-    setModuleCount('');
-    setDiscription('');
-    setTag('');
+    const formData = new FormData();
+    formData.append('name', user.name);
+    formData.append('Experience', user.Experience);
+    formData.append('description', user.description);
+    formData.append('Position', user.Position);
+    if (imageFile) {
+      formData.append('image', imageFile);
+    }
 
+    try {
+      const response = await axios.post('http://localhost:5000/api/teacher', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      console.log('Response:', response.data);
+      setCourses([...courses, response.data]); // Update the courses list
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
     closeModal();
   };
 
+  const handleDelete = async (courseId) => {
+    try {
+      const response = await axios.delete(`http://localhost:5000/api/teacher/${courseId}`);
+      if (response.status === 200) {
+        alert("Teacher deleted:");
+        setCourses(courses.filter(course => course._id !== courseId)); // Update the courses list
+      } else {
+        alert("Failed to delete teacher:");
+      }
+    } catch (error) {
+      console.log(error);
+      console.error("Error deleting teacher:", error);
+    }
+  };
 
   return (
-    <div>
+    <div className='p-2'>
       <div className="courses">
         <div className="courses_page_header">
           <div className="courses_page_head">
-            <h2>Available Teachers</h2>
-            <p>Whole data about your business here</p>
+            <h2 className='h2 text-white'>Available Teachers</h2>
           </div>
           <div className="courses_page_button">
             <input type="button" value="Add Teacher" onClick={openModal} />
@@ -119,34 +135,33 @@ const Modules = () => {
             <button className='close_btn' onClick={closeModal}>
               <IoIosCloseCircleOutline />
             </button>
-            <form className='modal_form' onSubmit={handleSubmit}>
+            <form className='modal_form mt-4' onSubmit={handleSubmit}>
               <label>
                 Upload Image
                 <input type="file" id="myFile" name="image" onChange={handleFileChange} />
               </label>
               <label>
-                Title
-                <input type="text" placeholder='Enter name' name="name"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)} />
+                Name
+                <input type="text" placeholder='Enter name of teacher' name="name" value={user.name} onChange={handleInputChange} />
               </label>
               <label>
-                Price
-                <input type="text" placeholder='Enter price' 
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}/>
+                Experience
+                <input type="text" placeholder='Enter Experience' name="Experience" value={user.Experience} onChange={handleInputChange} />
               </label>
               <label>
-                Discription
-                <input type="text" placeholder='Enter detail' name="detail" value={discription}
-                  onChange={(e) => setDiscription(e.target.value)} />
+                Details
+                <input type="text" placeholder='Enter description' name="description" value={user.description} onChange={handleInputChange} />
               </label>
-              <input className='create_course_btn' type='submit' value="Create Course" />
+              <label>
+                Position
+                <input type="text" placeholder='Enter Position' name="Position" value={user.Position} onChange={handleInputChange} />
+              </label>
+              <button className='create_course_btn' type="submit">Create Teacher</button>
             </form>
           </div>
         </Modal>
 
-        <div className="table">
+        <div className="table mt-5">
           <table>
             <div className="table_wrapper">
               <tr className='heading_row'>
@@ -166,12 +181,11 @@ const Modules = () => {
                   <td>{course.name}</td>
                   <td className='price'>{course.Experience} years</td>
                   <td>{course.description}</td>
-                  <td>{course.position}</td>
-                  
+                  <td>{course.Position}</td>
                   <td className='edit_btn'>
                     <input type="button" value="Edit Info" onClick={() => handleEdit(course._id)} />
                   </td>
-                  <td className='delete_btn'><input type="button" value="Delete" /></td>
+                  <td className='delete_btn'><input type="button" value="Delete" onClick={() => handleDelete(course._id)} /></td>
                 </tr>
               ))}
             </div>
@@ -182,4 +196,4 @@ const Modules = () => {
   )
 }
 
-export default Modules
+export default Modules;

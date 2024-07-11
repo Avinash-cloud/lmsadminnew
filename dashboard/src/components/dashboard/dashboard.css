@@ -24,10 +24,21 @@ body {
 }
 
 /* SECTION VERTICAL TABS */
+.sidebar {
+  height: 100%;
+  overflow-y: auto;
+
+}
 #experienceTab.nav-pills .nav-link {
     color: var(--white-clr);
     padding-top: 20px;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#experienceTab.nav-pills .nav-link span {
+  margin-right: 10px;
 }
 #experienceTab.nav-pills .nav-link.active {
     color: var(--yellow-clr) !important;
